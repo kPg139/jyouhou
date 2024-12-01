@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>授業情報受信 - 生徒用</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>今日の授業情報</h1>
+        <div id="lessonInfoDisplay">授業情報はまだありません。</div>
+    </div>
+
+    <script>
+        function displayLessonInfo() {
+            const lessonInfo = localStorage.getItem("lessonInfo");
+            const displayElement = document.getElementById("lessonInfoDisplay");
+
+            if (lessonInfo) {
+                displayElement.textContent = lessonInfo;
+            } else {
+                displayElement.textContent = "授業情報はまだありません。";
+            }
+        }
+
+        displayLessonInfo();
+    </script>
+</body>
+</html>
